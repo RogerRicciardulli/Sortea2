@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+	<meta charset="UTF-8" />
+	<title>Crear Sorteo</title>
+	<link rel="stylesheet" th:href="@{/vendor/bootstrap/css/bootstrap.min.css}">
+</head>
+
+<body>
+	<header th:fragment="header">
+		<header th:fragment="header">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<a class="navbar-brand" href="/index">Inicio</a>
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+					data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+
+						<li class="nav-item">
+							<a class="nav-link" href="/index">Home</a>
+						</li>
+
+				</div>
+				</li>
+				</ul>
+				</div>
+			</nav>
+			<div class="alert alert-danger alert-dismissable" th:if="${success != null}">
+				<label th:text="${success}"></label>
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+			</div>
+		</header>
+	</header>
+
+
+
+	<div class="card bg-light">
+		<div class="card-header bg-dark text-white" th:text="${titulo}"></div>
+		<div class="card-body">
+			<form action="#" th:action="@{/numerosAsignados/guardarSorteo5Valores}" th:object="${numerosAsignados}" method="post">
+				<p> Primero: <input type="number" th:field="*{primero}" min="1" max="100" />
+					<small class="form-text text-danger" th:if="${#fields.hasErrors('primero')}" th:errors="*{primero}">
+					</small>
+				</p>
+				<p> Segundo: <input type="number" th:field="*{segundo}" min="1" max="100" />
+					<small class="form-text text-danger" th:if="${#fields.hasErrors('segundo')}" th:errors="*{segundo}">
+					</small>
+				</p>
+				<p> Tercero: <input type="number" th:field="*{tercero}" min="1" max="100" />
+					<small class="form-text text-danger" th:if="${#fields.hasErrors('tercero')}" th:errors="*{tercero}">
+					</small>
+				</p>
+				<p> Cuarto: <input type="number" th:field="*{cuarto}" min="1" max="100" />
+					<small class="form-text text-danger" th:if="${#fields.hasErrors('cuarto')}" th:errors="*{cuarto}">
+					</small>
+				</p>
+				<p> Quinto: <input type="number" th:field="*{quinto}" min="1" max="100" />
+					<small class="form-text text-danger" th:if="${#fields.hasErrors('quinto')}" th:errors="*{quinto}">
+					</small>
+				</p>
+				<input type="hidden" th:field="*{empleado}" />
+				<input type="submit" />
+			</form>
+		</div>
+	</div>
+
+
+	<footer th:fragment="footer" class="bg-dark text-center text-white fixed-bottom">
+		<div class="container">
+			<p>Copyright Roger Ricciardulli 2022</p>
+		</div>
+
+		<script type="text/javascript" th:src="@{vendor/bootstrap/jquery/jquery.slim.min.js}"></script>
+		<script type="text/javascript" th:src="@{vendor/bootstrap/js/popper.min.js}"></script>
+		<script type="text/javascript" th:src="@{vendor/bootstrap/js/bootstrap.min.js}"></script>
+	</footer>
+
+</body>
+
+</html>

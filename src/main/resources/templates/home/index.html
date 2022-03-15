@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Sorteos</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="css/modern-business.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="/index">Inicio</a>
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+				data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/empleado/}">Registrarse</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/sorteo/lista}">Ver</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle"
+							data-toggle="dropdown" href="#" id="navbarDropdownBlog">Crear</a>
+						<div aria-labelledby="navbarDropdownBlog" class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" th:href="@{/sorteo/subirArchivo}">Sorteo Normal</a>
+							<a class="dropdown-item" th:href="@{/sorteo/subirArchivoSorteo3Valores}">Sorteo 3
+								Valores</a>
+							<a class="dropdown-item" th:href="@{/sorteo/crearSorteoQuini6}">Sorteo Quini 6</a>
+							<a class="dropdown-item" th:href="@{/sorteo/crearSorteo5Valores}">Sorteo 5 Numeros</a>
+						</div>
+					</li>
+			</div>
+	</nav>
+
+	<header>
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+
+			</ol>
+			<div class="carousel-inner" role="listbox">
+				<!-- Slide One - Set the background image for this slide in the line below -->
+				<div class="carousel-item active"
+					style="background-image: url('https://dayvo.com/Media/webdayvo/_Profiles/63cca036/2b9c6292/blog-%20normativa-sorteos-facebook-instagram-1.jpg?v=637655028891377102')">
+					<div class="carousel-caption d-none d-md-block">
+					</div>
+				</div>
+				<!-- Slide Two - Set the background image for this slide in the line below -->
+				<div class="carousel-item"
+					style="background-image: url('https://wpdirecto.com/wp-content/uploads/2020/08/sorteos-wordpress.jpg')">
+					<div class="carousel-caption d-none d-md-block">
+					</div>
+				</div>
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+
+		</div>
+	</header>
+
+	<div class="container" id="documentacion">
+		<h1 class="my-4">Sistema de Sorteos</h1>
+		<p>En <b>"Registrarse"</b> Puedes registrarte para un sorteo.</p>
+		<p>En <b>"Ver"</b> Puedes ver todos los sorteos.</p>
+		<p>En <b>"Crear"</b> Puedes crear distintos tipos de sorteos!!</p>
+		<p><i><u>Sorteo Normal:</u></i> Consiste en subir una lista de participantes, crear un sorteo y elegir la
+			cantidad de
+			ganadores. </p>
+		<p><i><u>Sorteo 3 Valores:</u></i> Como en el anterior, se sube una lista, se crear un sorteo con 3
+			valores aleatorios y, apartir de él,
+			se asignan 3 valores aleatorios (de 1 a 10) a cada participante de la lista. Para ganar se debe acertar el
+			valor y el
+			orden.</p>
+		<p><i><u>Sorteo Quini 6:</u></i> Se crea el sorteo que tiene 6 valores aleatorios, posteriormente te podes
+			registrarte en el, al registrarte se te asignan 6 valores aleatorios.
+			Para ganar se necesita acertar a los numeros, no importa el orden.</p>
+		<p><i><u>Sorteo 5 Numeros:</u></i> Se crea el sorteo, tiene 5 valores aleatorios, al igual que en el anterior,
+			te podes registrarte en el, al registrarte te pediran que escojas 5 numeros del 1 al 100, que funcionan como
+			rifas, una vez seleccionado un numero otro participante no lo puede escojer.</p>
+		<p></p>
+
+	</div>
+
+	<br>
+	<br>
+
+
+	<footer class="py-5 bg-dark">
+		<div class="container">
+			<p class="m-0 text-center text-white">Copyright &copy; Roger Ricciardulli 2022</p>
+		</div>
+		<!-- /.container -->
+	</footer>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
